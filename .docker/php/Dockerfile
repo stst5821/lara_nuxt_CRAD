@@ -12,8 +12,8 @@ RUN docker-php-ext-install mbstring pdo pdo_pgsql && \
     docker-php-ext-enable mbstring
 
 # php.conf php-fpm.conf
-COPY .docker/php/conf/php.ini /usr/local/etc/php/php.ini
-COPY .docker/php/conf/docker.conf /usr/local/etc/php-fpm.d/docker.conf
+COPY conf/php.ini /usr/local/etc/php/php.ini
+COPY conf/docker.conf /usr/local/etc/php-fpm.d/docker.conf
 
 # install Composer
 RUN curl -sS https://getcomposer.org/installer | php && \
