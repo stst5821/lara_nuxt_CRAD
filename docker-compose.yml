@@ -15,7 +15,7 @@ services:
   app:
     container_name: app
     build:
-      context: .
+      context: .docker/php
       dockerfile: Dockerfile
     environment:
       LANG: 'ja_JP.UTF-8'
