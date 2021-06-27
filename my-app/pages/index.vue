@@ -30,7 +30,7 @@ export default {
     Logo,
   },
   async asyncData(app) {
-    const data = await app.$axios.$get('http://localhost/api')
+    const data = await app.$axios.$get('/api')
     return {
       data,
     }
