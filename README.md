@@ -20,3 +20,28 @@ psql -h 127.0.0.1 -p 5432 -U docker -W docker -d laravel_development
 
 マイグレーションコマンド
 docker-compose exec app php artisan migrate
+
+heroku
+
+Heroku にアプリケーションを作成する
+$ heroku apps:create your-app-name
+
+注意点
+your-app-name の部分は、laravel の.env の APP_NAME と同じにする必要がある。
+
+https://laraveltestapp111.herokuapp.com/ | https://git.heroku.com/laraveltestapp111.git
+
+Heroku 側に環境変数をセットする
+$ heroku config:set APP_KEY=base64:C866sGFD9U9hhFuoRKVLYt9oPezWvlwwFVUvPeQdeRY= -a laraveltestapp111
+
+APP_KEY は、base64 から=までコピペして OK
+
+Heroku へ push する
+$ git push heroku main
+
+なにか設定を変更したら、以下の手順で push しないと変更が反映されないので注意。
+git add .
+git commit -m "test"
+してから、
+git push heroku main
+する
