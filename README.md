@@ -45,3 +45,29 @@ git commit -m "test"
 してから、
 git push heroku main
 する
+
+Nuxt 導入
+参考サイト
+https://deha.co.jp/magazine/admin-laravel-nuxt-setup/
+
+pages/index.vue の<script>の中を書くときの注意事項
+nginx を通して laravel を表示する場合、URL は http://localhost になるため、
+axios の URL 指定もそれに合わせる必要がある。
+
+```
+<script>
+import Logo from '~/components/Logo.vue'
+
+export default {
+  components: {
+    Logo,
+  },
+  async asyncData(app) {
+    const data = await app.$axios.$get('http://localhost/api') // ←ここをlocalhost/apiにしないとエラーになる。
+    return {
+      data,
+    }
+  },
+}
+</script>
+```
