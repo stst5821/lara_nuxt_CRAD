@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => env('DB_CONNECTION', 'pgsql'),
 
     /*
     |--------------------------------------------------------------------------
@@ -63,14 +63,29 @@ return [
             ]) : [],
         ],
 
+        // 'pgsql' => [
+        //     'driver' => 'pgsql',
+        //     'url' => env('DATABASE_URL'),
+        //     'host' => env('DB_HOST', '127.0.0.1'),
+        //     'port' => env('DB_PORT', '5432'),
+        //     'database' => env('DB_DATABASE', 'laravel_development'),
+        //     'username' => env('DB_USERNAME', 'docker'),
+        //     'password' => env('DB_PASSWORD', 'docker'),
+        //     'charset' => 'utf8',
+        //     'prefix' => '',
+        //     'prefix_indexes' => true,
+        //     'schema' => 'public',
+        //     'sslmode' => 'prefer',
+        // ],
+
         'pgsql' => [
             'driver' => 'pgsql',
             'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', '127.0.0.1'),
+            'host' => env('DB_HOST', 'ec2-54-91-188-254.compute-1.amazonaws.com'),
             'port' => env('DB_PORT', '5432'),
             'database' => env('DB_DATABASE', 'laravel_development'),
-            'username' => env('DB_USERNAME', 'docker'),
-            'password' => env('DB_PASSWORD', 'docker'),
+            'username' => env('DB_USERNAME', 'ixfrspqoeaflfr'),
+            'password' => env('DB_PASSWORD', '2e3115bcbb55149e1594c0e7e2e1c912f852c6c3719c517ba7e8332b79aef3f2'),
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
