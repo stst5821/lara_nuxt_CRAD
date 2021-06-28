@@ -18,6 +18,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/', function() {
-    return '俺のnuxtちゃん';
-});
+// Route::get('/', function() {
+//     return '俺のnuxtちゃん';
+// });
+
+// Route::get('index','PostController@index');
+
+// Route::middleware(['cors'])->group(function () {
+//     Route::get('test1', 'PostController@test1');
+// });
