@@ -17,4 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Route::middleware(['cors'])->group(function () {
+//     Route::get('test1', 'PostController@test1');
+// });
+
 Route::get('test1', 'PostController@test1');
