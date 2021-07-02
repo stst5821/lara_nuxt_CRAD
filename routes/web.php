@@ -21,4 +21,10 @@ Route::get('/', function () {
 //     Route::get('test1', 'PostController@test1');
 // });
 
-Route::get('test1', 'PostController@test1');
+// Route::get('test1', 'PostController@test1');
+
+// // Route::middleware(['cors'])->group(function () {
+//     Route::get('store', 'PostController@store');
+// // });
+
+// Route::post('store', 'PostController@store');

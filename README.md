@@ -80,3 +80,8 @@ export default {
 }
 </script>
 ```
+
+## CORS エラーが出た場合の対処方法
+
+参考：
+https://qiita.com/madayo/items/8a31fdd4def65fc08393

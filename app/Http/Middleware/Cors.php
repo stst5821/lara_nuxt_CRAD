@@ -6,19 +6,11 @@ use Closure;
 
 class Cors
 {
-    /**
-     * Handle an incoming request.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
-     * @return mixed
-     */
     public function handle($request, Closure $next)
     {
-        $response = $next($request);
-        $response->withHeaders([
-            'Access-Control-Allow-Origin' => '*',
-        ]);
-        return $response;
+        return $next($request)
+            ->header('Access-Control-Allow-Origin', '*')
+            ->header('Access-Control-Allow-Methods', 'GET, POST')
+            ->header('Access-Control-Allow-Headers', 'Accept, X-Requested-With, Origin, Content-Type');
     }
 }

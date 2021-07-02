@@ -8,18 +8,27 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
     public function test1()
-{   
-    // return response()->json([
-    //     'result' => 'Response from Laravel',
-    // ]); 
+    {   
+        $post = Post::all();
 
-    $post = Post::first();
-    // dd($post);
-    // $post = '俺のてすと';
+        return response (
+            ['result' => $post ]
+        ); 
+    }
 
-    return response (
-        ['result' => $post ]
-    ); 
-}
+    public function store(Request $request)
+    {
+        // header("Access-Control-Allow-Origin: *");
+        // header("Access-Control-Allow-Headers: Origin, X-Requested-With");
 
+        $test = $request->input('name');
+        // $test = 1;
+        
+        Post::create([
+            'name' => $test,
+            'body' => 1
+        ]);
+
+        return;
+    }
 }
