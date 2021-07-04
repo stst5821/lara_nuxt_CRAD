@@ -22,3 +22,5 @@ Route::get('test1', 'PostController@test1');
 
 Route::get('store', 'PostController@store');
 Route::post('store', 'PostController@store');
+
+Route::post('delete', 'PostController@delete');

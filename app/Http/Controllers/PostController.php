@@ -18,17 +18,19 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
-        // header("Access-Control-Allow-Origin: *");
-        // header("Access-Control-Allow-Headers: Origin, X-Requested-With");
-
         $test = $request->input('name');
-        // $test = 1;
-        
+
         Post::create([
             'name' => $test,
             'body' => 1
         ]);
+        return;
+    }
 
+    public function delete(Request $request)
+    {
+        $post = Post::findOrFail($request->id);
+        $post->delete();
         return;
     }
 }
