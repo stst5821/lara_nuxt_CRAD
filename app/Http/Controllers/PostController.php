@@ -18,13 +18,23 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
-        $test = $request->input('name');
+        $data = $request;
 
         Post::create([
-            'name' => $test,
-            'body' => 1
+            'name' => $data->name,
+            'body' => $data->body,
         ]);
         return;
+    }
+
+    public function edit(Request $request)
+    {
+        $post = Post::findOrFail($request->id);
+        // $post = Post::all();
+
+        return response (
+            ['result' => $post ]
+        ); 
     }
 
     public function delete(Request $request)
