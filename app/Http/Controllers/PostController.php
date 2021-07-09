@@ -37,6 +37,17 @@ class PostController extends Controller
         ); 
     }
 
+    public function update(Request $request)
+    {
+        $update = [
+            'name' => $request->name,
+            'body' => $request->body
+        ];
+
+        Post::where('id',$request->id)->update($update);
+        return;
+    }
+
     public function delete(Request $request)
     {
         $post = Post::findOrFail($request->id);
