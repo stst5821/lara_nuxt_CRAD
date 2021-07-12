@@ -54,6 +54,13 @@ https://www.i-ryo.com/entry/2020/10/20/081654
 heroku pg:psql
 コマンドが動かない場合、homebrew でローカルに postgresql をインストールする。
 
+### Heroku 上で migration 実行
+
+heroku run php artisan migrate
+
+参考サイト：
+https://noauto-nolife.com/post/laravel-heroku-deploy/
+
 ## Nuxt 導入
 
 参考サイト
